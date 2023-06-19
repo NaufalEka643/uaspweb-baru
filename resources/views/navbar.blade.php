@@ -19,7 +19,7 @@
                                     <li class="nav-item mx-0 mx-lg-1">
                                         <form action="{{ route('logout') }}" method="POST">
                                             @csrf
-                                            <button type="submit" class="nav-link py-3 px-0 px-lg-3 rounded text-white">Logout</button>
+                                            <button type="submit" class="nav-link py-3 px-0 px-lg-3 rounded text-white">LOGOUT</button>
                                         </form>
                                     </li>
                                 @else

@@ -17,7 +17,7 @@
     <hr>
     <!-- Button trigger modal -->
     @auth
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #1abc9c">
             Masukkan Komentar
         </button>
     @else
@@ -52,7 +52,7 @@
 <div class="col-md-4 offset-md-1 col-sm-12 mt-5 bg-white p-4 h-100">
    <center> 
         <a href="/"> 
-            <button class="btn btn-info text-white w-100">Kembali</button> 
+            <button class="btn btn-info text-white w-100" style="background-color: #1abc9c">Kembali</button> 
         </a>
     </center>
 </div>
@@ -65,7 +65,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Masukkan komentar</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
                 <div class="modal-body">
                     <input type="hidden" value="{{ $article->id }}" name="artikel_id">
@@ -75,7 +75,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: #1abc9c">Save changes</button>
                 </div>
             </div>
         </div>

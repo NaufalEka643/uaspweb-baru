@@ -15,13 +15,13 @@
 <!-- membuat komponen main yang berisi form untuk mengisi judul dan isi artikel -->
 @section('main')
     @foreach ($articles as $article)
-    <div class="col-md-4 col-sm-12 mt-5">
+    <div class="col-md-4 col-sm-12 mt-5 mb-5">
         <div class="card">
             {{-- storage link laravel 10 --}}
             <img src="{{ asset('storage/gambar-artikel/'.$article->gambar) }}" class="card-img-top" alt="gambar" >
             <div class="card-body">
                 <h5 class="card-title">{{ $article->judul }}</h5>
-                <a href="/detail/{{ $article->id }}" class="btn btn-primary">Baca Artikel</a>
+                <a href="/detail/{{ $article->id }}" class="btn btn-secondary" style="background-color: #1abc9c">Baca Artikel</a>
             </div>
         </div>
     </div>
