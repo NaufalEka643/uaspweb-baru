@@ -20,4 +20,11 @@ class KomenController extends Controller
 
         return redirect()->route('artikel.detail', $request->artikel_id);
     }
+
+    public function delete($id)
+    {
+        $komen = Komen::where('id', $id)->delete();
+
+        return redirect()->back();
+    }
 }

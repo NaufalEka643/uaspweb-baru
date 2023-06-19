@@ -21,6 +21,7 @@
             <thead>
                 <tr>
                     <th>No.</th>
+                    <th>Gambar</th>
                     <th>Judul</th>
                     {{-- <th>Deskripsi</th> --}}
                     <th width="15%">Aksi</th>
@@ -30,6 +31,7 @@
                 @foreach ($articles as $i => $article)
                     <tr>
                         <td>{{ ++$i }}</td>
+                        <td><img src="{{ asset('storage/gambar-artikel/'.$article->gambar) }}" alt="" style="width: 100px"></td>
                         <td>{{ $article->judul }}</td>
                         {{-- <td>{{ $article->deskripsi }}</td> --}}
                         <td>

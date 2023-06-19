@@ -35,6 +35,12 @@
                 @endphp
             </h4>
             <p>{{ $komen->comment_body }}</p>
+            @if (Auth::user()->is_admin == 1)
+                <form action="{{ route('komen.delete', $komen->id) }}" method="POST">
+                    @csrf
+                    <button type="submit">Hapus</button>
+                </form>
+            @endif
         </div>
         <hr>
     @endforeach
