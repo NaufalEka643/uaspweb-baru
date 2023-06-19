@@ -31,7 +31,7 @@
 <div class="col-md-3 ml-md-5 col-sm-12 bg-white p-4" style="height:120px !important
     <div class="form-group">
         <label>Edit</label>
-        <input type="submit" class="form-control btn btn-primary" value="Edit">
+        <input type="submit" class="form-control btn btn-primary"  style="background-color: #1abc9c" value="Upload">
     </div>
 </div>
 </form>

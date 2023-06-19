@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Komen;
+use App\Models\Artikel;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,10 +12,16 @@ use Symfony\Component\Mime\MimeTypes;
 
 class ArtikelController extends Controller
 {
+    // public function show()
+    // {
+    //     $articles = DB::table('artikels')->orderby('id', 'desc')->get();
+    //     return view('show', ['articles'=>$articles]);
+    // }
+
     public function show()
     {
-        $articles = DB::table('artikel')->orderby('id', 'desc')->get();
-        return view('show', ['articles'=>$articles]);
+        $articles = Artikel::orderBy('id', 'desc')->get();
+        return view('show', ['articles' => $articles]);
     }
 
 
@@ -25,7 +32,7 @@ class ArtikelController extends Controller
         $path       = 'gambar-artikel/'.$filename;
         
         
-        DB::table('artikel')->insert([
+        DB::table('artikels')->insert([
             
             'judul'     =>  $article->judul,
             'deskripsi' =>  $article->deskripsi,
@@ -38,9 +45,19 @@ class ArtikelController extends Controller
         return redirect()->route('artikel.show');
     }
 
+    // public function detail($id)
+    // {
+    //     $article = DB::table('artikels')->where('id', $id)->first();
+    //     $komens = Komen::where('artikel_id', $id)->get();
+    //     return view('detail', [
+    //         'article' => $article,
+    //         'komens' => $komens
+    //     ]);
+    // }
+
     public function detail($id)
     {
-        $article = DB::table('artikel')->where('id', $id)->first();
+        $article = Artikel::find($id);
         $komens = Komen::where('artikel_id', $id)->get();
         return view('detail', [
             'article' => $article,
@@ -48,24 +65,37 @@ class ArtikelController extends Controller
         ]);
     }
 
+    // public function show_by_admin()
+    // {
+    //     $articles = DB::table('artikels')->orderby('id', 'desc')->get();
+    //     return view('adminshow', ['articles'=>$articles]);
+    // }
+    
     public function show_by_admin()
     {
-        $articles = DB::table('artikel')->orderby('id', 'desc')->get();
-        return view('adminshow', ['articles'=>$articles]);
+        $articles = Artikel::orderBy('id', 'desc')->get();
+        return view('adminshow', ['articles' => $articles]);
     }
+
+    // public function edit($id)
+    // {
+    //     $article = DB::table('artikels')->where('id', $id)->first();
+    //     return view('edit', ['article'=>$article]);
+    // }
 
     public function edit($id)
     {
-        $article = DB::table('artikel')->where('id', $id)->first();
-        return view('edit', ['article'=>$article]);
+        $article = Artikel::find($id);
+        return view('edit', ['article' => $article]);
     }
+
 
     public function edit_process(Request $article)
     {
         $id = $article->id;
         $judul = $article->judul;
         $deskripsi = $article->deskripsi;
-        DB::table('artikel')->where('id', $id)
+        Artikel::where('id', $id)
                             ->update(['judul' => $judul, 'deskripsi' => $deskripsi]);
         session()->flash('success', 'Artikel berhasil diedit');
         return redirect()->route('show.admin');
@@ -74,7 +104,7 @@ class ArtikelController extends Controller
     public function delete($id)
     {
         //menghapus artikel dengan ID sesuai pada URL
-        DB::table('artikel')->where('id', $id)
+        Artikel::where('id', $id)
                             ->delete();
  
         //membuat pesan yang akan ditampilkan ketika artikel berhasil dihapus

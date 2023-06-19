@@ -16,12 +16,13 @@
     </div>
     <hr>
     <!-- Button trigger modal -->
+    {{-- melakukan pengecekan autentifikasi/login --}}
     @auth
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #1abc9c">
             Masukkan Komentar
         </button>
     @else
-        <a href="/login" class="btn btn-primary">
+        <a href="/login" class="btn btn-primary" style="background-color: #1abc9c">
             Masukkan Komentar
         </a>
     @endauth
