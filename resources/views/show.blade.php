@@ -18,7 +18,7 @@
     <div class="col-md-4 col-sm-12 mt-5">
         <div class="card">
             {{-- storage link laravel 10 --}}
-            <img src="img/download1.jpg" class="card-img-top" alt="gambar" >
+            <img src="{{ asset('storage/gambar-artikel/'.$article->gambar) }}" class="card-img-top" alt="gambar" >
             <div class="card-body">
                 <h5 class="card-title">{{ $article->judul }}</h5>
                 <a href="/detail/{{ $article->id }}" class="btn btn-primary">Baca Artikel</a>

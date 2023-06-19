@@ -11,6 +11,9 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded text-white" href="/">Home</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded text-white" href="/artikel">Artikel</a></li>
+                        @if (Auth::check() && Auth::user()->is_admin == 1)
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded text-white" href="/admin">Admin</a></li>
+                        @endif
                         @if (Route::has('login'))
                                 @auth
                                     <li class="nav-item mx-0 mx-lg-1">

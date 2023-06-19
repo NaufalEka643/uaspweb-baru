@@ -8,12 +8,13 @@
 <!-- menampilkan gambar, judul, dan isi artikel -->
 @section('main')
 <div class="col-md-7 col-sm-12 mb-5 mt-5 bg-white p-0">
-    {{-- <img src="https://atlantictravelsusa.com/wp-content/uploads/2016/04/dummy-post-horisontal-thegem-blog-default.jpg" class="card-img-top" alt="gambar" > --}}
-    <div class="p-4">
+    <img src="{{ asset('storage/gambar-artikel/'.$article->gambar) }}" class="card-img-top w-50" alt="gambar">
+    <hr>
+    <div class="p-4" >
         <h2>{{ $article->judul }}</h2>
         <p class="mt-5">{!! $article->deskripsi !!}</p>
     </div>
-
+    <hr>
     <!-- Button trigger modal -->
     @auth
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -35,6 +36,7 @@
             </h4>
             <p>{{ $komen->comment_body }}</p>
         </div>
+        <hr>
     @endforeach
 </div>
 @endsection

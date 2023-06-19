@@ -12,7 +12,8 @@ class Artikel extends Model
 
     protected $fillable = [
         'judul',
-        'deskripsi'
+        'deskripsi',
+        'gambar'
     ];
 
     public function Komen()

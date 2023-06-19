@@ -17,6 +17,7 @@ class CreateArtikelTable extends Migration
             $table->bigIncrements('id');
             $table->string('judul');
             $table->text('deskripsi');
+            $table->string('gambar') -> nullable();
             $table->timestamps();
         });
     }

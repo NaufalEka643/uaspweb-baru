@@ -6,6 +6,8 @@ use App\Models\Komen;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\Mime\MimeTypes;
 
 class ArtikelController extends Controller
 {
@@ -18,11 +20,21 @@ class ArtikelController extends Controller
 
     public function add_process(Request $article)
     {
+        $gambar     = $article->file('gambar');
+        $filename   = date('Y-m-d').$gambar->getClientOriginalName();
+        $path       = 'gambar-artikel/'.$filename;
+        
+        
         DB::table('artikel')->insert([
-            'judul'=>$article->judul,
-            'deskripsi'=>$article->deskripsi
+            
+            'judul'     =>  $article->judul,
+            'deskripsi' =>  $article->deskripsi,
+            'gambar'    => $filename
+
         ]);
- 
+
+        Storage::disk('public')->put($path,file_get_contents($gambar));
+
         return redirect()->route('artikel.show');
     }
 

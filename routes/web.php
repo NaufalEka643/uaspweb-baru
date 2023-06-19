@@ -40,10 +40,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/komen', [KomenController::class, 'store'])->name('komen.store');
 });
 
+Route::middleware('is_admin')->group(function () {
+    Route::get('/admin',  [ArtikelController::class, 'show_by_admin']) -> name('show.admin');
+});
+
 Route::get('/artikel', [ArtikelController::class, 'show'])->name('artikel.show');
 Route::post('/add_process', [ArtikelController::class, 'add_process']);
 Route::get('/detail/{id}', [ArtikelController::class, 'detail'])->name('artikel.detail');
-Route::get('/admin',  [ArtikelController::class, 'show_by_admin']) -> name('show.admin');
 Route::get('/edit/{id}', [ArtikelController::class, 'edit']);
 Route::post('/edit_process', [ArtikelController::class, 'edit_process']);
 Route::get('/delete/{id}', [ArtikelController::class, 'delete']);
