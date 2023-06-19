@@ -92,8 +92,12 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
+                    <div class="col-lg-4 ms-auto"><p class="lead">IAGROW merupakan website blog penyedia informasi tentang agriculture yang menyediakan berbagai konten terkait dengan agriculture. Dalam website ini, pengguna dapat menemukan artikel-artikel informatif, berita terkini, dan sumber daya informasi lainnya yang berkaitan dengan berbagai aspek agriculture.
+                        Website ini dikelola oleh tim pengelola/admin sehingga informasi yang disajikan dapat dipercaya, terkini, dan relevan untuk pembaca
+                        </p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">dalam meningkatkan praktik pertanian mereka, menghadapi tantangan yang mungkin muncul atau hanya sekedar menambah wawasan.
+                        selain itu, website ini juga menyediakan kolom komentar dibawah artikel, sehingga memungkinkan pembaca untuk berbagi ilmu dan pengalaman dengan pembaca lain. Hal ini memungkinkan untuk pembaca belajar satu sama lain dan memperluas jaringan mereka dalam industri pertanian.
+                        </p></div>
                 </div>
                 <!-- About Section Button-->
                 <div class="text-center mt-4">
@@ -112,9 +116,9 @@
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Lokasi</h4>
                         <p class="lead mb-0">
-                            2215 John Daniel Drive
+                            Jember
                             <br />
-                            Clark, MO 65243
+                            Universitas Jember
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
@@ -127,12 +131,7 @@
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                        <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
-                        </p>
+                        <h4 class="text-uppercase mb-4">IAGROW</h4>
                     </div>
                 </div>
             </div>

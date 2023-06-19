@@ -69,11 +69,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <h4 class="text-uppercase mb-4">Lokasi</h4>
                     <p class="lead mb-0">
-                        2215 John Daniel Drive
+                        Jember
                         <br />
-                        Clark, MO 65243
+                        Universitas Jember
                     </p>
                 </div>
                 <div class="col-lg-4 mb-5 mb-lg-0">
@@ -84,12 +84,7 @@
                     <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
                 </div>
                 <div class="col-lg-4">
-                    <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                    <p class="lead mb-0">
-                        Freelance is a free to use, MIT licensed Bootstrap theme created by
-                        <a href="http://startbootstrap.com">Start Bootstrap</a>
-                        .
-                    </p>
+                    <h4 class="text-uppercase mb-4">IAGROW</h4>
                 </div>
             </div>
         </div>
