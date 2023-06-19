@@ -45,6 +45,7 @@ Route::middleware('is_admin')->group(function () {
     Route::post('/komen/{id}', [KomenController::class, 'delete'])->name('komen.delete');
 });
 
+
 Route::get('/artikel', [ArtikelController::class, 'show'])->name('artikel.show');
 Route::post('/add_process', [ArtikelController::class, 'add_process']);
 Route::get('/detail/{id}', [ArtikelController::class, 'detail'])->name('artikel.detail');
