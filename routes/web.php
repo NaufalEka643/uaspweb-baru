@@ -23,29 +23,22 @@ use App\Http\Controllers\KomenController;
 Route::get('/add', function () {
     return view('add');
 });
-
 Route::get('/', function () {
     return view('landingpage');
 });
-
 Route::get('/login', function () {
     return view('login');
 });
-
 Route::get('/register', function () {
     return view('register');
 });
-
 Route::middleware('auth')->group(function () {
     Route::post('/komen', [KomenController::class, 'store'])->name('komen.store');
 });
-
 Route::middleware('is_admin')->group(function () {
     Route::get('/admin',  [ArtikelController::class, 'show_by_admin']) -> name('show.admin');
     Route::post('/komen/{id}', [KomenController::class, 'delete'])->name('komen.delete');
 });
-
-
 Route::get('/artikel', [ArtikelController::class, 'show'])->name('artikel.show');
 Route::post('/add_process', [ArtikelController::class, 'add_process']);
 Route::get('/detail/{id}', [ArtikelController::class, 'detail'])->name('artikel.detail');

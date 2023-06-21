@@ -15,6 +15,7 @@
         <p class="mt-5">{!! $article->deskripsi !!}</p>
     </div>
     <hr>
+
     <!-- Button trigger modal -->
     {{-- melakukan pengecekan autentifikasi/login --}}
     @auth
@@ -27,6 +28,9 @@
         </a>
     @endauth
 
+    {{-- menampilkan nama user ketika login dan comment body(isi) nya --}}
+    {{-- melakukan pengecekan jika masuk menggunakan akun admin 
+        akan memunculkan tombol delete komentar --}}
     @foreach ($komens as $komen)
         <div class="p-4">
             <h4>

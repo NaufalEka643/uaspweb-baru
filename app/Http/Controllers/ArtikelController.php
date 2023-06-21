@@ -12,18 +12,11 @@ use Symfony\Component\Mime\MimeTypes;
 
 class ArtikelController extends Controller
 {
-    // public function show()
-    // {
-    //     $articles = DB::table('artikels')->orderby('id', 'desc')->get();
-    //     return view('show', ['articles'=>$articles]);
-    // }
-
     public function show()
     {
         $articles = Artikel::orderBy('id', 'desc')->get();
         return view('show', ['articles' => $articles]);
     }
-
 
     public function add_process(Request $article)
     {
@@ -45,16 +38,6 @@ class ArtikelController extends Controller
         return redirect()->route('artikel.show');
     }
 
-    // public function detail($id)
-    // {
-    //     $article = DB::table('artikels')->where('id', $id)->first();
-    //     $komens = Komen::where('artikel_id', $id)->get();
-    //     return view('detail', [
-    //         'article' => $article,
-    //         'komens' => $komens
-    //     ]);
-    // }
-
     public function detail($id)
     {
         $article = Artikel::find($id);
@@ -65,23 +48,11 @@ class ArtikelController extends Controller
         ]);
     }
 
-    // public function show_by_admin()
-    // {
-    //     $articles = DB::table('artikels')->orderby('id', 'desc')->get();
-    //     return view('adminshow', ['articles'=>$articles]);
-    // }
-    
     public function show_by_admin()
     {
         $articles = Artikel::orderBy('id', 'desc')->get();
         return view('adminshow', ['articles' => $articles]);
     }
-
-    // public function edit($id)
-    // {
-    //     $article = DB::table('artikels')->where('id', $id)->first();
-    //     return view('edit', ['article'=>$article]);
-    // }
 
     public function edit($id)
     {
